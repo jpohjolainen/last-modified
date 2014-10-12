@@ -21,4 +21,4 @@ module.exports =
   create: ->
     atom.workspace.observeTextEditors (editor) =>
       lm = new LastModified(editor)
-      @events.push(lm.saveEvent)
+      @events.push lm.saveEvent 
