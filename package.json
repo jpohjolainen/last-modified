@@ -1,0 +1,15 @@
+{
+  "name": "last-modified",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "author": "Janne Pohjolainen <messis@gmail.com>",
+  "description": "Updates last modified field on save.",
+  "repository": "https://github.com/jpohjolainen/last-modified",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.135.0"
+  },
+  "dependencies": {
+      "strftime": "*"
+  }
+}
