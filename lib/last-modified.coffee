@@ -13,7 +13,6 @@ class LastModified
   updateLastModified: ->
     return if not @editor.isModified()
 
-    console.log 'updateLastModified:', @editor.getBuffer().file.path
     rowsToRead = atom.config.get('last-modified.rowsToRead')
     rowsRange = [[0,0], [rowsToRead, 0]]
     @editor.scanInBufferRange /Last Modified:/, rowsRange, (match) =>
