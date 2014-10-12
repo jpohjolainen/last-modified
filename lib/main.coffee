@@ -5,20 +5,21 @@ module.exports =
     rowsToRead: 20
     timeFormat: '%d.%m.%Y %H:%M:%S'
 
-  events: []
+  handlers: []
 
   activate: ->
     atom.workspaceView.command "last-modified:toggle", => @toggle()
     @create()
 
   toggle: ->
-    if @events.length > 0
-      e.dispose() for e in @events
-      @events = []
+    if @handlers.length > 0
+      handle.dispose() for handle in @handlers
+      @handlers = []
     else
       @create()
 
   create: ->
     atom.workspace.observeTextEditors (editor) =>
+      @editor = editor
       lm = new LastModified(editor)
-      @events.push lm.saveEvent 
+      @handlers.push lm.saveHandler
