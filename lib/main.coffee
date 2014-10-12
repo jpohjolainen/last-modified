@@ -20,6 +20,5 @@ module.exports =
 
   create: ->
     atom.workspace.observeTextEditors (editor) =>
-      @editor = editor
       lm = new LastModified(editor)
       @handlers.push lm.saveHandler
