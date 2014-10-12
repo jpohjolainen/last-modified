@@ -2,5 +2,6 @@
 
 Updates date and time of last modified field.
 
-This searches the file's first rowsToRead (default: 20) for 'Last Modified:' tag
-in comment sections and updates the time when file is saved.
+When saving a modified file, this searches the file's first rowsToRead (default: 20)
+for 'Last Modified:' and checks if it is in a comment section and then updates 
+the time.

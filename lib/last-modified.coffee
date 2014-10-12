@@ -18,7 +18,6 @@ class LastModified
     rowsRange = [[0,0], [rowsToRead, 0]]
     @editor.scanInBufferRange /Last Modified:/, rowsRange, (match) =>
       scopes = @editor.scopesForBufferPosition(match.range.start)
-      console.log scopes
       if scopes[1]?.match(/comment/)
         @replaceDate(match.range.end)
 
